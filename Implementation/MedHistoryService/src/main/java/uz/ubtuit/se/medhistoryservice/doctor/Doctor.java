@@ -24,7 +24,7 @@ import uz.ubtuit.se.medhistoryservice.config.DBConnection;
  * @author dilshod
  */
 
-@Path(value = "Doctor")
+@Path(value = "doctor")
 public class Doctor {
     public String firstName;
     public String lastName;
@@ -69,33 +69,5 @@ public class Doctor {
     public String getAddress() {
         return this.address;
     }
-     
-    @GET
-    @Path(value = "GetAllDoctors")
-    @Produces(value = MediaType.APPLICATION_JSON)
-    public List<Doctor> getAllDoctors() {
-        DBConnection mysqlConnect = new DBConnection();
-        String sql = "SELECT * FROM doctor";
-        List<Doctor> doctors = new ArrayList<>();
-        try {
-            ResultSet resultSet = mysqlConnect.connect().createStatement().executeQuery(sql);
-            while (resultSet.next()) {
-                String firstName = resultSet.getString("first_name");
-                String lastName = resultSet.getString("last_name");
-                String login = resultSet.getString("login");
-                String password = resultSet.getString("password");
-                Doctor doc = new Doctor();
-                doc.setFirstName(firstName);
-                doc.setLastName(lastName);
-                doc.setLogin(login);
-                doc.setPassword(password);
-                doctors.add(doc);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            mysqlConnect.disconnect();
-        }
-        return doctors;
-    }
+    
 }

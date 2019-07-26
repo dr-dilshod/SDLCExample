@@ -5,7 +5,6 @@
  */
 package uz.ubtuit.se.medhistoryservice.doctor;
 
-import java.sql.Date;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,15 +13,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  *
  * @author dilshod
  */
-public class DoctorTest {
+public class DoctorControllerTest {
     
-    public DoctorTest() {
+    public DoctorControllerTest() {
     }
     
     @BeforeClass
@@ -41,14 +38,27 @@ public class DoctorTest {
     public void tearDown() {
     }
 
+    /**
+     * Test of getAllDoctors method, of class DoctorController.
+     */
     @Test
     public void testGetAllDoctors() {
         System.out.println("getAllDoctors");
         DoctorController instance = new DoctorController();
+        List<Doctor> expResult = null;
         List<Doctor> result = instance.getAllDoctors();
-        for (Doctor doc : result) {
-           System.out.println(ToStringBuilder.reflectionToString(doc,ToStringStyle.SHORT_PREFIX_STYLE));
-        }
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+      @Test
+    public void testGetDoctorById() {
+        System.out.println("getAllDoctors");
+        DoctorController instance = new DoctorController();
+        
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }
