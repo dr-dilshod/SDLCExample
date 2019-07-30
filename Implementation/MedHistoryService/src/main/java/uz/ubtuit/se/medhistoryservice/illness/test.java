@@ -12,7 +12,7 @@ package uz.ubtuit.se.medhistoryservice.illness;
 public class test {
     public void sayHallo(){
         System.out.println("Salom Dunyo");
-        eshmat;
+        
     }
     
 }
