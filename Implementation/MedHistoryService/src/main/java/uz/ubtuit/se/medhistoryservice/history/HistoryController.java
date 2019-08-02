@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import org.eclipse.persistence.logging.SessionLog;
 import uz.ubtuit.se.medhistoryservice.config.DBConnection;
 
 /**
@@ -60,7 +59,6 @@ public class HistoryController {
         History history = new History();
 //         ResultSet resultSet = mysqlConnection.connect().createStatement().executeQuery(sql);
         ResultSet resultSet = mysqBConnection.connect().createStatement().executeQuery(sql);
-        
     }
     
 }

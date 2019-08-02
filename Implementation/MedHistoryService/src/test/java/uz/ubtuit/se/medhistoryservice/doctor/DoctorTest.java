@@ -44,7 +44,7 @@ public class DoctorTest {
     @Test
     public void testGetAllDoctors() {
         System.out.println("getAllDoctors");
-        DoctorController instance = new DoctorController();
+        DoctorControllerImpl instance = new DoctorControllerImpl();
 //        String result = instance.getAllDoctors();
 //        for (Doctor doc : result) {
 //           System.out.println(ToStringBuilder.reflectionToString(doc,ToStringStyle.SHORT_PREFIX_STYLE));
