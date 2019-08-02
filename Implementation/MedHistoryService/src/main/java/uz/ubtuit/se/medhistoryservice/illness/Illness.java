@@ -10,5 +10,4 @@ package uz.ubtuit.se.medhistoryservice.illness;
  * @author dilshod
  */
 public class Illness {
-    asdfasdf
 }

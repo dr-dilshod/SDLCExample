@@ -5,28 +5,41 @@
  */
 package uz.ubtuit.se.medhistoryservice.doctor;
 
+import com.google.gson.Gson;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import uz.ubtuit.se.medhistoryservice.config.DBConnection;
 
 /**
  *
  * @author dilshod
  */
+@Path("/doctor")
 public class DoctorController {
+    /**
+     * This method returns all doctors available in the DB table
+     * @return 
+     */
     @GET
-    @Path(value = "getAllDoctors")
-    @Produces(value = MediaType.APPLICATION_JSON)
-    public List<Doctor> getAllDoctors() {
+    @Path("/GetAllDoctors")
+    @Produces("application/json")
+    public String getAllDoctors() {
         DBConnection mysqlConnect = new DBConnection();
         String sql = "SELECT * FROM doctor";
+        JSONArray array=new JSONArray();
         List<Doctor> doctors = new ArrayList<>();
         try {
             ResultSet resultSet = mysqlConnect.connect().createStatement().executeQuery(sql);
@@ -47,6 +60,7 @@ public class DoctorController {
                 doc.setAddress(address);
                 doc.setBirthDate(date);
                 
+                array.put(new JSONObject(doc));
                 doctors.add(doc);
             }
         } catch (SQLException e) {
@@ -54,6 +68,43 @@ public class DoctorController {
         } finally {
             mysqlConnect.disconnect();
         }
-        return doctors;
+        return array.toString();
+    }
+    /**
+     * This method return only one doctor by its id
+     */
+    @GET
+    @Path("/GetDoctorByID/{id}")
+    @Produces("application/json")
+    public String getDoctorByID(@PathParam("id") String id) {
+        DBConnection mysqlConnect = new DBConnection();
+        String sql = "SELECT * FROM doctor WHERE id=" + id;
+        JSONObject someObject = null;
+        try {
+            ResultSet resultSet = mysqlConnect.connect().createStatement().executeQuery(sql);
+            while (resultSet.next()) {
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                String login = resultSet.getString("login");
+                String password = resultSet.getString("password");
+                Date date = resultSet.getDate("birth_date");
+                String address = resultSet.getString("address");
+                
+                Doctor doc = new Doctor();
+                
+                doc.setFirstName(firstName);
+                doc.setLastName(lastName);
+                doc.setLogin(login);
+                doc.setPassword(password);
+                doc.setAddress(address);
+                doc.setBirthDate(date);
+                someObject = new JSONObject(doc);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            mysqlConnect.disconnect();
+        }
+        return someObject.toString();
     }
 }

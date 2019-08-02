@@ -24,7 +24,6 @@ import uz.ubtuit.se.medhistoryservice.config.DBConnection;
  * @author dilshod
  */
 
-@Path(value = "doctor")
 public class Doctor {
     public String firstName;
     public String lastName;

@@ -5,18 +5,22 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 <display-name>cxf</display-name>
 
-<servlet>
-<servlet-name>Jersey Web Application</servlet-name>
-<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-<load-on-startup>1</load-on-startup>
-</servlet>
-<servlet-mapping>
-<servlet-name>Jersey Web Application</servlet-name>
-<url-pattern>/rest/*</url-pattern>
-</servlet-mapping>
-
-<session-config>
-	<session-timeout>60</session-timeout>
-</session-config>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <servlet>
+    <servlet-name>rest</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>uz.ubtuit.se.medhistoryservice.doctor</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>rest</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
 
 </web-app>
