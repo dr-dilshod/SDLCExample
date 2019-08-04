@@ -13,12 +13,21 @@ import javax.ws.rs.Path;
  */
 @Path(value = "history")
 public class History {
+    private int id;
     private String name;
     private String symptom;
     private String reason;
     private String severity;
     private String patient;
     private String doctor;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
