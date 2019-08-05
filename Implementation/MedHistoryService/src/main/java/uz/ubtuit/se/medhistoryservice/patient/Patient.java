@@ -30,6 +30,38 @@ public class Patient {
     public String phone;
     public String blood_group;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getBlood_group() {
+        return blood_group;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -61,6 +93,11 @@ public class Patient {
     public void setBlood_group(String blood_group) {
         this.blood_group = blood_group;
     }
+
+    void setBirthDate(String birthdate) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     
 
