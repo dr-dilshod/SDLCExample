@@ -27,13 +27,12 @@ public class HistoryControllerImp implements HistoryConInterface{
 
     @Override
     public String getAllHistory() {
-         DBConnection mysqlConnection = new DBConnection();
+        DBConnection mysqlConnection = new DBConnection();
         String sql = "SELECT * FROM histroy";
         JSONArray array=new JSONArray();
         List<History> histories = new ArrayList<>();
         try{
           ResultSet resultSet = mysqlConnection.connect().createStatement().executeQuery(sql);
-
             while (resultSet.next()) {
             String name = resultSet.getString("name");
             String symptom = resultSet.getString("symptom");
@@ -59,9 +58,7 @@ public class HistoryControllerImp implements HistoryConInterface{
         }finally{
         mysqlConnection.disconnect();
         }
-            
     return array.toString();
-
     }
 
     
@@ -72,7 +69,6 @@ public class HistoryControllerImp implements HistoryConInterface{
             String sql  = "Insert into history (name, symptom, reason, severity, patient, doctor) "
                     + "VALUES(?,?,?,?,?,?)";
             java.sql.PreparedStatement preparedStatement = mysqBConnection.connect().prepareStatement(sql);
-            ResultSet resultSet = mysqBConnection.connect().createStatement().executeQuery(sql);
             preparedStatement.setString(1, history.getName());
             preparedStatement.setString(2, history.getSymptom());
             preparedStatement.setString(3, history.getReason());
@@ -84,9 +80,7 @@ public class HistoryControllerImp implements HistoryConInterface{
         } catch (SQLException ex) {
                    Logger.getLogger(HistoryControllerImp.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
-
     @Override
     public void deleteHistory(int id) {
                 DBConnection mysqConnection = new DBConnection();
@@ -94,7 +88,7 @@ public class HistoryControllerImp implements HistoryConInterface{
     {
         
       String query = "delete from history where id = ?";
-        PreparedStatement preparedStmt = mysqConnection.connect().prepareStatement(query);
+      PreparedStatement preparedStmt = mysqConnection.connect().prepareStatement(query);
       preparedStmt.setInt(1, id);
       preparedStmt.execute();
       mysqConnection.disconnect();
@@ -138,10 +132,10 @@ public class HistoryControllerImp implements HistoryConInterface{
 
     }
 
-   @GET
-    @Path("/GetHistoryByID/{id}")
-    @Produces("application/json")
-    public String gethistoryById(String id) {
+@GET
+@Path("/GetHistoryByID/{id}")
+@Produces("application/json")
+public String gethistoryById(String id) {
   DBConnection mysqlConnect = new DBConnection();
         String sql = "SELECT * FROM history WHERE id=" + id;
         JSONObject someObject = null;
@@ -171,8 +165,6 @@ public class HistoryControllerImp implements HistoryConInterface{
         }
         return someObject.toString();
     }
-
-
-    }
+}
     
 
