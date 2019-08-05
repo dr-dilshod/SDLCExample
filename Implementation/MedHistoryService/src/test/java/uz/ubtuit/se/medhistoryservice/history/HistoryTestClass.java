@@ -5,6 +5,9 @@
  */
 package uz.ubtuit.se.medhistoryservice.history;
 
+import java.util.List;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -41,11 +44,11 @@ public class HistoryTestClass {
     @Test
     public void testGetAllGistory(){
          System.out.println("getAllHistory");
-         HistoryConInterface instance = new HistoryControllerImp();
-        String result = instance.getAllHistory();
-//        for(History history : result){
-//            
-//        }
+         HistoryController instance = new HistoryControllerImp();
+         List<History> result = instance.getAllHistory();
+        for (History doc : result) {
+           System.out.println(ToStringBuilder.reflectionToString(doc,ToStringStyle.SHORT_PREFIX_STYLE));
+        }
     }
     
     @Test
@@ -57,15 +60,15 @@ public class HistoryTestClass {
         h.setSeverity("severity");
         h.setPatient("patient");
         h.setDoctor("doctor");
-        HistoryConInterface historyController = new HistoryControllerImp();
-         historyController.saveHistory(h);
+        HistoryController historyController = new HistoryControllerImp();
+        historyController.saveHistory(h);
     }
     
     
     @Test
     public void testDeleteHistry(){
     int id = 2;
-    HistoryConInterface hController = new HistoryControllerImp();
+    HistoryController hController = new HistoryControllerImp();
     hController.deleteHistory(id);
     }
 
@@ -81,7 +84,7 @@ public class HistoryTestClass {
         d.setSeverity("severityX");
         d.setPatient("patientX");
         d.setDoctor("doctorX");
-        HistoryConInterface his = new HistoryControllerImp();
+        HistoryController his = new HistoryControllerImp();
         his.updateHistory(d);
     }
 
