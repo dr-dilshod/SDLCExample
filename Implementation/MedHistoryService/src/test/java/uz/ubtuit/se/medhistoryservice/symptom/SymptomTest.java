@@ -5,6 +5,7 @@
  */
 package uz.ubtuit.se.medhistoryservice.symptom;
 
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -41,7 +42,7 @@ public class SymptomTest {
     @Test
     public void deleteSymptom(){
         int id = 23;
-        SymptomController s = (SymptomController) new SymptomControllerImpl();
+        SymptomControllerImpl s = new SymptomControllerImpl();
         s.deleteSymptom(id);
        
     
@@ -50,10 +51,11 @@ public class SymptomTest {
     
     @Test
     public void testAddSymptom(){
-    Symptom s = new Symptom();
-    s.setId(25);
-    s.setName("name");
-    s.setInformation("information");
+        Symptom s = new Symptom();
+        s.setName("uxlash");
+        s.setInformation("kop uxlash");
+        SymptomControllerImpl symp = new SymptomControllerImpl();
+        symp.addSymptom(s);
     }
     
     @Test
@@ -63,12 +65,18 @@ public class SymptomTest {
     s.setName("grip");
     s.setInformation("shamollash");   
     }
-
-    
-    
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test 
+    public void testGetAllSymptoms() {
+        SymptomControllerImpl symp = new SymptomControllerImpl();
+        List<Symptom> all = symp.getAllSymptoms();
+        for (Symptom s : all) {
+            System.out.println("name = " + s.getName() + "| Info = " + s.getInformation());
+        }
+    }
+    @Test 
+    public void testGetSymptomByID() {
+        SymptomControllerImpl symp = new SymptomControllerImpl();
+        Symptom s = symp.getSymptomByID(23);
+        System.out.println("name = " + s.getName() + "| Info = " + s.getInformation());
+    }
 }
