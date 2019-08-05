@@ -80,13 +80,10 @@ public class Doctor {
     public String getPassword() {
         return this.password;
     }
-
     public Date getBirthDate() {
         return this.birthDate;
     }
-
     public String getAddress() {
         return this.address;
     }
-
 }
