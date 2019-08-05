@@ -14,8 +14,11 @@ import javax.ws.rs.PathParam;
  */
 public interface HistoryController {
     public List<History> getAllHistory();
-        public void saveHistory(History history);
+        public void addHistory(History history);
         public void deleteHistory(int id);
         public void updateHistory(History history);
-        public String gethistoryById(@PathParam("id") String id);
+        public String gethistoryById(int id);
+
+
+
 }

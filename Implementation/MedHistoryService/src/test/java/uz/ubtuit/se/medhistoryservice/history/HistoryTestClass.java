@@ -42,7 +42,7 @@ public class HistoryTestClass {
 
     
     @Test
-    public void testGetAllGistory(){
+    public void testGetAllHistory(){
          System.out.println("getAllHistory");
          HistoryController instance = new HistoryControllerImp();
          List<History> result = instance.getAllHistory();
@@ -61,7 +61,7 @@ public class HistoryTestClass {
         h.setPatient("patient");
         h.setDoctor("doctor");
         HistoryController historyController = new HistoryControllerImp();
-        historyController.saveHistory(h);
+        historyController.addHistory(h);
     }
     
     
@@ -87,7 +87,14 @@ public class HistoryTestClass {
         HistoryController his = new HistoryControllerImp();
         his.updateHistory(d);
     }
-
+    @Test
+    public void getHistoryById(){
+            int id = 3;
+            HistoryControllerImp hc = new HistoryControllerImp();
+//            History h = hc.gethistoryById(id);
+    
+    
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

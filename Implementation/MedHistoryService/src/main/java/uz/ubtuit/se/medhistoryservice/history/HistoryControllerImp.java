@@ -62,7 +62,7 @@ public class HistoryControllerImp implements HistoryController {
 
     
     @Override
-    public void saveHistory(History history) {
+    public void addHistory(History history) {
                try {
             DBConnection mysqBConnection = new DBConnection();
             String sql  = "Insert into history (name, symptom, reason, severity, patient, doctor) "
@@ -134,7 +134,7 @@ public class HistoryControllerImp implements HistoryController {
 @GET
 @Path("/GetHistoryByID/{id}")
 @Produces("application/json")
-public String gethistoryById(String id) {
+public String gethistoryById(int id) {
   DBConnection mysqlConnect = new DBConnection();
         String sql = "SELECT * FROM history WHERE id=" + id;
         JSONObject someObject = null;
