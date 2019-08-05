@@ -3,22 +3,22 @@
 package uz.ubtuit.se.medhistoryservice.patient;
 
 import java.util.Date;
-//import sun.util.calendar.LocalGregorianCalendar;
-//
-//import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
-//import java.sql.SQLException;
-//import java.util.ArrayList;
-//import java.util.List;
-//import javax.ws.rs.Path;
-//import javax.ws.rs.core.MediaType;
-//import uz.ubtuit.se.medhistoryservice.config.DBConnection;
+import sun.util.calendar.LocalGregorianCalendar;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.MediaType;
+import uz.ubtuit.se.medhistoryservice.config.DBConnection;
 
 
 /**
  *
  * @author bekturdi
  */
+@Path(value = "patient")
 public class Patient {
 
     public String name;
