@@ -23,13 +23,12 @@ import uz.ubtuit.se.medhistoryservice.config.DBConnection;
  *
  * @author MERCEDES
  */
-public class HistoryControllerImp implements HistoryConInterface{
+public class HistoryControllerImp implements HistoryController {
 
-    @Override
-    public String getAllHistory() {
+    public List<History> getAllHistory() {
         DBConnection mysqlConnection = new DBConnection();
-        String sql = "SELECT * FROM histroy";
-        JSONArray array=new JSONArray();
+        String sql = "SELECT * FROM history";
+//        JSONArray array=new JSONArray();
         List<History> histories = new ArrayList<>();
         try{
           ResultSet resultSet = mysqlConnection.connect().createStatement().executeQuery(sql);
@@ -50,7 +49,7 @@ public class HistoryControllerImp implements HistoryConInterface{
             history.setPatient(patient);
             history.setDoctor(doctor);
         
-            array.put(new JSONArray(history));
+//          array.put(history);
             histories.add(history);
         }
         }catch(Exception e){
@@ -58,7 +57,7 @@ public class HistoryControllerImp implements HistoryConInterface{
         }finally{
         mysqlConnection.disconnect();
         }
-    return array.toString();
+    return histories;
     }
 
     
