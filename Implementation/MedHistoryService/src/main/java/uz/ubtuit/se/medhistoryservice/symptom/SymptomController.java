@@ -14,7 +14,7 @@ import javax.websocket.server.PathParam;
 public interface SymptomController {
     
     public String getAllSymptom();
-    public String getSymptomByID(@PathParam("id")String id);
+    public String getSymptomByID(int id);
     public void addSymptom(Symptom symptom);
     public void deleteSymptom(int id);
     public void updateSymptom(Symptom symptom);

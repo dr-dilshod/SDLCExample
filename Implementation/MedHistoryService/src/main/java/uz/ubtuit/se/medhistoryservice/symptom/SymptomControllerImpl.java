@@ -30,26 +30,18 @@ public class  SymptomControllerImpl {
     @GET
     @Path("/GetAllSymptoms")
     @Produces("application/json")
-    public String getAllSymptoms() {
+    public List<Symptom> getAllSymptoms() {
         DBConnection mysqlConnect = new DBConnection();
         String sql = "SELECT * FROM symptom";
-        JSONArray array=new JSONArray();
         List<Symptom> symptoms = new ArrayList<>();
         try {
             ResultSet resultSet = mysqlConnect.connect().createStatement().executeQuery(sql);
             while (resultSet.next()) {
-                String Name = resultSet.getString("name");
-                String Information = resultSet.getString("information");
-
+                String name = resultSet.getString("Name");
+                String information = resultSet.getString("Information");
                 Symptom symp = new Symptom();
-                String name = null;
-
                 symp.setName(name);
-                String information = null;
                 symp.setInformation(information);
-                
-                
-                array.put(new JSONObject(symp));
                 symptoms.add(symp);
             }
         } catch (SQLException e) {
@@ -57,7 +49,7 @@ public class  SymptomControllerImpl {
         } finally {
             mysqlConnect.disconnect();
         }
-        return array.toString();
+        return symptoms;
     }
     /**
      * This method return only one doctor by its id
@@ -65,29 +57,24 @@ public class  SymptomControllerImpl {
     @GET
     @Path("/GetSymptomByID/{id}")
     @Produces("application/json")
-    public String getSymptomByID(@PathParam("id") String id) {
+    public Symptom getSymptomByID(int id) {
         DBConnection mysqlConnect = new DBConnection();
         String sql = "SELECT * FROM symptom WHERE ID=" + id;
-        JSONObject someObject = null;
+        Symptom symp = new Symptom();
         try {
             ResultSet resultSet = mysqlConnect.connect().createStatement().executeQuery(sql);
             while (resultSet.next()) {
                 String name = resultSet.getString("name");
                 String information = resultSet.getString("information");
-                
-                Symptom symp = new Symptom();
-                
                 symp.setName(name);
                 symp.setInformation(information);
-                
-                someObject = new JSONObject(symp);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             mysqlConnect.disconnect();
         }
-        return someObject.toString();
+        return symp;
     }
 
     public void addSymptom(Symptom symptom) {
@@ -108,13 +95,13 @@ public class  SymptomControllerImpl {
   
     }
 
-    public void deleteSymptom(int ID) {
+    public void deleteSymptom(int id) {
         DBConnection dbc = new DBConnection();
         try
         {
           String query = "DELETE FROM symptom WHERE  ID = ?";
           PreparedStatement preparedStmt = dbc.connect().prepareStatement(query);
-          preparedStmt.setInt(24, ID);
+          preparedStmt.setInt(1, id);
           preparedStmt.execute();
           dbc.disconnect();
         }
@@ -126,7 +113,7 @@ public class  SymptomControllerImpl {
     }
 
     
-    public void updateDoctor(Symptom symptom) {
+    public void updateSymptom(Symptom symptom) {
     DBConnection dbc = new DBConnection();
     
     try
@@ -152,9 +139,5 @@ public class  SymptomControllerImpl {
     }
     }
 
-    
-    public void updateSymptom(Symptom symptom) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
  
 }
