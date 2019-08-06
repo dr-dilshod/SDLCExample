@@ -4,14 +4,17 @@
  * and open the template in the editor.
  */
 package uz.ubtuit.se.medhistoryservice.illness;
+
+import java.util.List;
+
 /**
  *
  * @author Delux
  */
 public interface IllnessController {
  
- public String getAllIllness();
- public String getIllnesByID(int id);
+ public List<Illness> getAllIllnesses();
+ public Illness getIllnessByID(int id);
  public void addIllness(Illness illness);
  public void deleteIllness(int id);
  public void updateIllness(Illness illness); 

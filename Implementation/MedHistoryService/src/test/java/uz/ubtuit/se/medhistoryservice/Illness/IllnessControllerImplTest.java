@@ -1,7 +1,9 @@
 
-package uz.ubtuit.se.medhistoryservice.Illnes;
+package uz.ubtuit.se.medhistoryservice.Illness;
 
 import java.util.List;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,9 +17,9 @@ import uz.ubtuit.se.medhistoryservice.illness.IllnessControllerImpl;
  *
  * @author Egamberdi Otoxonov
  */
-public class IllnessTest {
+public class IllnessControllerImplTest {
     
-    public IllnessTest() {
+    public IllnessControllerImplTest() {
     }
     
     @BeforeClass
@@ -49,26 +51,30 @@ public class IllnessTest {
         i.setName("uxlash");
         i.setReason("kop uxlash");
         i.setSeverity("o'rtacha");
-        i.setSymptom("dagasalik");
+        i.setSymptom("");
         IllnessControllerImpl ill = new IllnessControllerImpl();
         ill.addIllness(i);
     }
     
      @Test
     public void updateIllness(){
-    Illness i = new Illness();
-    i.setName("gripp");
-    i.setReason("shamollash"); 
+        Illness i = new Illness();
+        i.setName("gripp");
+        i.setReason("shamollash"); 
     }
     
      @Test 
     public void testGetAllIllneses() {
         IllnessControllerImpl ill = new IllnessControllerImpl();
-        List<Illness> all = ill.getAllIllneses();
+        List<Illness> all = ill.getAllIllnesses();
         for (Illness i : all) {
-            System.out.println("name = " + i.getName()+ "| reason = " + i.getReason() + "| severity = " i.getSeverity() + "| symptom = " + i.getSymptom());
-        }
+            System.out.println(ToStringBuilder.reflectionToString(i,ToStringStyle.SHORT_PREFIX_STYLE));        }
     }
-    
+    @Test 
+    public void testGetIllnessByID() {
+        IllnessControllerImpl symp = new IllnessControllerImpl();
+        Illness s = symp.getIllnessByID(1);
+        System.out.println("name = " + s.getName() + "| Info = " + s.getReason());
+    }
     
 }

@@ -40,7 +40,7 @@ CREATE TABLE `illness` (
 -- Dumping data for table `illness`
 --
 
-INSERT INTO `illness` (`Id`, `Name`, `reason`, `severity`, `symptom`) VALUES
+INSERT INTO `illness` (`id`, `Name`, `reason`, `severity`, `symptom`) VALUES
 (1, 'sss', 'ddd', 'fff', 'ggg');
 
 --

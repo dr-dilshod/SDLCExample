@@ -17,11 +17,11 @@ import uz.ubtuit.se.medhistoryservice.illness.Illness;
  *
  * @author Shohruh
  */
-public class IllnessControllerImpl {
+public class IllnessControllerImpl implements IllnessController{
     @GET
     @Path("/GetAllillneses")
     @Produces("application/json")
-    public List<Illness> getillneses() {
+    public List<Illness> getAllIllnesses() {
         DBConnection mysqlConnect = new DBConnection();
         String sql = "SELECT * FROM illness";
         List<Illness> illneses = new ArrayList<>();
@@ -70,25 +70,6 @@ public class IllnessControllerImpl {
             mysqlConnect.disconnect();
         }
         return ill;
-    }
-    public void addSymptom(Illness illness) {
-        DBConnection dbc = new DBConnection();
-        try { 
-            String sql = "INSERT INTO illness(Name, reason, severity, symptom) "
-                    + "VALUES (?,?,?,?)";
-            java.sql.PreparedStatement preparedStatement = dbc.connect().prepareStatement(sql);
-            preparedStatement.setString(1, illness.getName());
-            preparedStatement.setString(2, illness.getReason());
-            preparedStatement.setString(3, illness.getSeverity());
-            preparedStatement.setString(4, illness.getSymptom());
-            preparedStatement.executeUpdate(); 
-            dbc.disconnect();
-        } catch (Exception e) {  
-            
-            System.err.println("Got an exception! "); 
-            System.err.println(e.getMessage()); 
-        } 
-  
     }
     public void addIllness(Illness illness) {
         DBConnection dbc = new DBConnection();
@@ -157,11 +138,4 @@ public class IllnessControllerImpl {
     }
     }
 
-    public List<Illness> getAllIllneses() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-     
-     
 }
