@@ -91,7 +91,7 @@ public class HistoryTestClass {
     public void getHistoryById(){
             int id = 3;
             HistoryControllerImp hc = new HistoryControllerImp();
-//            History h = hc.gethistoryById(id);
+            History h = hc.gethistoryById(id);
     
     
     }

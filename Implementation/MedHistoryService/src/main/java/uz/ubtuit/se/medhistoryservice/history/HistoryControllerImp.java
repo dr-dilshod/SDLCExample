@@ -134,10 +134,12 @@ public class HistoryControllerImp implements HistoryController {
 @GET
 @Path("/GetHistoryByID/{id}")
 @Produces("application/json")
-public String gethistoryById(int id) {
+public History gethistoryById(int id) {
   DBConnection mysqlConnect = new DBConnection();
         String sql = "SELECT * FROM history WHERE id=" + id;
         JSONObject someObject = null;
+                        History history = new History();
+
         try {
             ResultSet resultSet = mysqlConnect.connect().createStatement().executeQuery(sql);
             while (resultSet.next()) {
@@ -148,7 +150,6 @@ public String gethistoryById(int id) {
                 String patient = resultSet.getString("patient");
                 String doctor = resultSet.getString("doctor");
                 
-                History history = new History();
                 history.setName(name);
                 history.setSymptom(symptom);
                 history.setReason(reason);
@@ -162,7 +163,7 @@ public String gethistoryById(int id) {
         } finally {
             mysqlConnect.disconnect();
         }
-        return someObject.toString();
+        return history;
     }
 }
     
