@@ -66,7 +66,7 @@ public class IllnessTest {
         IllnessControllerImpl ill = new IllnessControllerImpl();
         List<Illness> all = ill.getAllIllneses();
         for (Illness i : all) {
-            System.out.println("name = " + i.getName() + "| reason = " + i.getReason() + "| severity = " i.getSeverity() + "| symptom = " + i.getSymptom());
+            System.out.println("name = " + i.getName() + "| reason = " + i.getReason() + "| severity = " +i.getSeverity() + "| symptom = " + i.getSymptom());
         }
     }
     @Test 
