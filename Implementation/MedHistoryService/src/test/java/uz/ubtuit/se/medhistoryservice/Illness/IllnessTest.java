@@ -49,7 +49,7 @@ public class IllnessTest {
         i.setName("uxlash");
         i.setReason("kop uxlash");
         i.setSeverity("o'rtacha");
-        i.setSymptom("dagasalik");
+        i.setSymptom("");
         IllnessControllerImpl ill = new IllnessControllerImpl();
         ill.addIllness(i);
     }
@@ -66,7 +66,7 @@ public class IllnessTest {
         IllnessControllerImpl ill = new IllnessControllerImpl();
         List<Illness> all = ill.getAllIllneses();
         for (Illness i : all) {
-            System.out.println("name = " + i.getName() + "| reason = " + i.getReason() + "| severity = " i.getSeverity() + "| symptom = " + i.getSymptom());
+            System.out.println("name = " + i.getName() + "| reason = " + i.getReason() + "| severity = " +i.getSeverity() + "| symptom = " + i.getSymptom());
         }
     }
     @Test 
