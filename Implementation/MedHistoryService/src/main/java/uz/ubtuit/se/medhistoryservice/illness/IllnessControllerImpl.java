@@ -20,9 +20,9 @@ public class IllnessControllerImpl {
     @GET
     @Path("/GetAllillness")
     @Produces("application/json")
-    public List<Illness> getillnes() {
+    public List<Illness> getillness() {
         DBConnection mysqlConnect = new DBConnection();
-        String sql = "SELECT * FROM illnes";
+        String sql = "SELECT * FROM illness";
         List<Illness> illneses = new ArrayList<>();
         try {
             ResultSet resultSet = mysqlConnect.connect().createStatement().executeQuery(sql);
@@ -53,7 +53,7 @@ public class IllnessControllerImpl {
     @Produces("application/json")
     public Illness getIllnesByID(int id) {
         DBConnection mysqlConnect = new DBConnection();
-        String sql = "SELECT * FROM illnes WHERE ID=" + id;
+        String sql = "SELECT * FROM illness WHERE ID=" + id;
         Illness ill = new Illness();
         try {
             ResultSet resultSet = mysqlConnect.connect().createStatement().executeQuery(sql);
@@ -73,7 +73,7 @@ public class IllnessControllerImpl {
     public void addSymptom(Illness illness) {
         DBConnection dbc = new DBConnection();
         try { 
-            String sql = "INSERT INTO illnes(Name, reason, serverity, symptom) "
+            String sql = "INSERT INTO illness(Name, reason, serverity, symptom) "
                     + "VALUES (?,?,?,?)";
             java.sql.PreparedStatement preparedStatement = dbc.connect().prepareStatement(sql);
             preparedStatement.setString(1, illness.getName());
@@ -89,6 +89,7 @@ public class IllnessControllerImpl {
         } 
   
     }
+    
     
    
 }

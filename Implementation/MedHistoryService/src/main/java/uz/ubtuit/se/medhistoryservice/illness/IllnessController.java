@@ -8,13 +8,13 @@ package uz.ubtuit.se.medhistoryservice.illness;
  *
  * @author Delux
  */
-public interface IllnesController {
+public interface IllnessController {
  
- public String getAllIllnes();
+ public String getAllIllness();
  public String getIllnesByID(int id);
- public void addIllnes(Illness illness);
- public void deleteIllnes(int id);
- public void updateIllnes(Illness illnes); 
+ public void addIllness(Illness illness);
+ public void deleteIllness(int id);
+ public void updateIllness(Illness illness); 
 
 //  public String getAllSymptom();
     //public String getSymptomByID(int id);
