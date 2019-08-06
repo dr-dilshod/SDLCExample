@@ -21,7 +21,7 @@ import uz.ubtuit.se.medhistoryservice.history.HistoryControllerImp;
  *
  * @author Bekturdi_
  */
-public class PatientConIml  implements PatientCont{
+public class PatientControllerIml  implements PatientController{
 
     @Override
     public List<Patient> getAllPatient() {
@@ -54,10 +54,11 @@ public class PatientConIml  implements PatientCont{
 //          array.put(history);
             patient.add(p);
         }
+            mysqlConnection.disconnect();
         }catch(Exception e){
         e.printStackTrace();
         }finally{
-        mysqlConnection.disconnect();
+        
         }
     return patient;
     }
@@ -71,7 +72,7 @@ public class PatientConIml  implements PatientCont{
             java.sql.PreparedStatement preparedStatement = mysqBConnection.connect().prepareStatement(sql);
             preparedStatement.setString(1, patient.getName());
             preparedStatement.setString(2, patient.getSurname());
-            preparedStatement.setDate(3, (Date) patient.getBirthDate());
+            preparedStatement.setString(3, patient.getBirthDate());
             preparedStatement.setString(4, patient.getLogin());
             preparedStatement.setString(5, patient.getPassword());
             preparedStatement.setString(6, patient.getAddress());
@@ -80,7 +81,7 @@ public class PatientConIml  implements PatientCont{
             preparedStatement.executeUpdate(); 
             mysqBConnection.disconnect();
         } catch (SQLException ex) {
-                   Logger.getLogger(PatientConIml.class.getName()).log(Level.SEVERE, null, ex);
+                   Logger.getLogger(PatientControllerIml.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -93,7 +94,7 @@ public class PatientConIml  implements PatientCont{
       String query = "delete from patient where id = ?";
       PreparedStatement preparedStmt = mysqConnection.connect().prepareStatement(query);
       preparedStmt.setInt(1, id);
-      preparedStmt.execute();
+      preparedStmt.executeUpdate();
       mysqConnection.disconnect();
     }
     catch (Exception e)
@@ -115,7 +116,7 @@ public class PatientConIml  implements PatientCont{
       PreparedStatement preparedStatement = dBConnection.connect().prepareStatement(query);
         preparedStatement.setString(1, patient.getName());
             preparedStatement.setString(2, patient.getSurname());
-            preparedStatement.setDate(3, (Date) patient.getBirthDate());
+            preparedStatement.setString(3, patient.getBirthDate());
             preparedStatement.setString(4, patient.getLogin());
             preparedStatement.setString(5, patient.getPassword());
             preparedStatement.setString(6, patient.getAddress());
