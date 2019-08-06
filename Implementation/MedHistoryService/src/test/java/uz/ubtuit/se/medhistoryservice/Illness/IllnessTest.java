@@ -49,7 +49,7 @@ public class IllnessTest {
         i.setName("uxlash");
         i.setReason("kop uxlash");
         i.setSeverity("o'rtacha");
-        i.setSymptom("dagasalik");
+        i.setSymptom("");
         IllnessControllerImpl ill = new IllnessControllerImpl();
         ill.addIllness(i);
     }
