@@ -6,6 +6,8 @@
 package uz.ubtuit.se.medhistoryservice.patient;
 
 import java.util.List;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,9 +19,9 @@ import static org.junit.Assert.*;
  *
  * @author Bekturdi_
  */
-public class PatientConImlTest {
+public class PatientControllerImlTest {
     
-    public PatientConImlTest() {
+    public PatientControllerImlTest() {
     }
     
     @BeforeClass
@@ -44,12 +46,11 @@ public class PatientConImlTest {
     @Test
     public void testGetAllPatient() {
         System.out.println("getAllPatient");
-        PatientConIml instance = new PatientConIml();
-        List<Patient> expResult = null;
+        PatientControllerIml instance = new PatientControllerIml();
         List<Patient> result = instance.getAllPatient();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        for (Patient doc : result) {
+           System.out.println(ToStringBuilder.reflectionToString(doc,ToStringStyle.SHORT_PREFIX_STYLE));
+        }
     }
 
     /**
@@ -59,10 +60,8 @@ public class PatientConImlTest {
     public void testAddPatient() {
         System.out.println("addPatient");
         Patient patient = null;
-        PatientConIml instance = new PatientConIml();
+        PatientControllerIml instance = new PatientControllerIml();
         instance.addPatient(patient);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,10 +71,8 @@ public class PatientConImlTest {
     public void testDeletePatient() {
         System.out.println("deletePatient");
         int id = 1;
-        PatientConIml instance = new PatientConIml();
+        PatientControllerIml instance = new PatientControllerIml();
         instance.deletePatient(id);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -85,10 +82,8 @@ public class PatientConImlTest {
     public void testUpdatePatient() {
         System.out.println("updatePatient");
         Patient patient = null;
-        PatientConIml instance = new PatientConIml();
+        PatientControllerIml instance = new PatientControllerIml();
         instance.updatePatient(patient);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -98,12 +93,10 @@ public class PatientConImlTest {
     public void testGetPatientById() {
         System.out.println("getPatientById");
         String id = "";
-        PatientConIml instance = new PatientConIml();
+        PatientControllerIml instance = new PatientControllerIml();
         String expResult = "";
         String result = instance.getPatientById(id);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        assertEquals(expResult, result);
     }
     
 }
