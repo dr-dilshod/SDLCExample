@@ -17,7 +17,7 @@ public interface HistoryController {
         public void addHistory(History history);
         public void deleteHistory(int id);
         public void updateHistory(History history);
-        public String gethistoryById(int id);
+        public History gethistoryById(int id);
 
 
 
