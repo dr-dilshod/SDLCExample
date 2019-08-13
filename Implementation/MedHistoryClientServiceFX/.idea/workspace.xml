@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="new all package javafx added">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uz/ubtuit/se/medhistory/restservice/RestserviceModel.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/doctor/DoctorController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/doctor/DoctorMain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/doctor/doctor.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/history/HistoryController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/history/HistoryMain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/history/history.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/illness/IllnessController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/illness/IllnessMain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/illness/illness.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/patient/PatientMain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/patient/PatiertController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/patient/patient.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/restservice/RestserviceController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/restservice/RestserviceMain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/restservice/restservice.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/symptom/SymptomController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/symptom/SymptomMain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/symptom/symptom.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/treatment/TreatmentController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/treatment/TreatmentMain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/uz/ubtuit/se/medhistory/treatment/treatment.fxml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MedHistoryClientServiceFX.iml" afterPath="$PROJECT_DIR$/MedHistoryClientServiceFX.iml" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="new all package javafx added" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -91,8 +63,8 @@
       <file leaf-file-name="RestserverController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uz/ubtuit/se/medhistory/restservice/RestserverController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="56" column="85" lean-forward="false" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
+            <state relative-caret-position="126">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -984,7 +956,7 @@
       <workItem from="1565346333263" duration="1206000" />
       <workItem from="1565347884897" duration="423000" />
       <workItem from="1565633228323" duration="6331000" />
-      <workItem from="1565685067006" duration="3151000" />
+      <workItem from="1565685067006" duration="3672000" />
     </task>
     <task id="LOCAL-00001" summary="new package fx added">
       <created>1565261067714</created>
@@ -1004,7 +976,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24383000" />
+    <option name="totallyTimeSpent" value="24904000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1419,8 +1391,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uz/ubtuit/se/medhistory/restservice/RestserverController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="56" column="85" lean-forward="false" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
+        <state relative-caret-position="126">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
