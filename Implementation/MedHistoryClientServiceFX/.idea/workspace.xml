@@ -956,7 +956,7 @@
       <workItem from="1565346333263" duration="1206000" />
       <workItem from="1565347884897" duration="423000" />
       <workItem from="1565633228323" duration="6331000" />
-      <workItem from="1565685067006" duration="3672000" />
+      <workItem from="1565685067006" duration="3838000" />
     </task>
     <task id="LOCAL-00001" summary="new package fx added">
       <created>1565261067714</created>
@@ -976,7 +976,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24904000" />
+    <option name="totallyTimeSpent" value="25070000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
