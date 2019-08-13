@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:controller="uz.ubtuit.se.medhistory.symptom.SymptomController" xmlns:fx="http://javafx.com/fxml" prefHeight="500" prefWidth="800">
+
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+
+<AnchorPane prefHeight="500" prefWidth="800" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="uz.ubtuit.se.medhistory.restservice.RestserviceController">
+   <children>
+      <Button fx:id="button" layoutX="148.0" layoutY="35.0" mnemonicParsing="false" style="-fx-background-color: blue; -fx-text-fill: white;" text="ok">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableView" layoutX="63.0" layoutY="85.0" prefHeight="342.0" prefWidth="377.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="№" />
+            <TableColumn fx:id="name" prefWidth="75.0" text="name" />
+            <TableColumn fx:id="surname" prefWidth="75.0" text="surname" />
+            <TableColumn fx:id="login" prefWidth="75.0" text="login" />
+            <TableColumn fx:id="password" prefWidth="75.0" text="password" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

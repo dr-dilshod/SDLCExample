@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:controller="uz.ubtuit.se.medhistory.history.HistoryController" xmlns:fx="http://javafx.com/fxml" prefWidth="800" prefHeight="800"></AnchorPane>

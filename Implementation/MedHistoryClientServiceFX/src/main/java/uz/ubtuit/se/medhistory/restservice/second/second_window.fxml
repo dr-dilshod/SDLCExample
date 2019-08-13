@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:controller="uz.ubtuit.se.medhistory.restservice.second.SecondController"
+            xmlns:fx="http://javafx.com/fxml" prefHeight="100" prefWidth="200"></AnchorPane>
