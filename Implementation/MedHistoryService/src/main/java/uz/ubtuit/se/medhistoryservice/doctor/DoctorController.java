@@ -14,7 +14,7 @@ import javax.ws.rs.PathParam;
 public interface DoctorController {
     public String getAllDoctors();
     public String getDoctorByID(@PathParam("id") String id);
-    public void addDoctor(Doctor doctor);
+    public void addDoctor(String docInString);
     public void deleteDoctor(int id);
     public void updateDoctor(Doctor doctor);
     

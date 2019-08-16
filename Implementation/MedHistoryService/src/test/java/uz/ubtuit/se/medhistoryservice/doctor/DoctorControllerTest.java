@@ -5,6 +5,10 @@
  */
 package uz.ubtuit.se.medhistoryservice.doctor;
 
+import com.google.gson.Gson;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import java.sql.Date;
 import java.util.List;
 import org.junit.After;
@@ -60,16 +64,22 @@ public class DoctorControllerTest {
         // TODO review the generated test code and remove the default call to fail.
     }
     @Test
-    public void testAddDoctor() {
+    public void testAddDoctor() throws UnirestException {
         Doctor d = new Doctor();
-        d.setFirstName("Apandi");
-        d.setLastName("Programmistlar");
-        d.setLogin("Java");
-        d.setPassword("1234");
+        d.setFirstName("WebServiceTest");
+        d.setLastName("JSONTest");
+        d.setLogin("json");
+        d.setPassword("123");
         d.setBirthDate(Date.valueOf("2019-08-14"));
-        d.setAddress("Earth");
-        DoctorController dc = new DoctorControllerImpl();
-        dc.addDoctor(d);
+        d.setAddress("urganch");
+        Gson serializer = new Gson();
+        HttpResponse<String> response;
+        //Unirest.setObjectMapper(new GsonObjectMapper());
+        response = Unirest.put("http://172.20.120.220:8889/api/doctor/AddDoctor").
+                header("accept", "application/json")
+                .header("Content-Type", "application/json")
+                .body(serializer.toJson(d))
+                .asString();
     }
        @Test
     public void testUpdateDoctor() {

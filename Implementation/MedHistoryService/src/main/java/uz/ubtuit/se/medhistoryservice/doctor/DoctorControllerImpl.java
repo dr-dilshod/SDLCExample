@@ -15,7 +15,9 @@ import java.util.List;
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -109,9 +111,14 @@ public class DoctorControllerImpl implements DoctorController {
         return someObject.toString();
     }
 
-    @Override
-    public void addDoctor(Doctor doctor) {
+    @PUT
+    @Path("/AddDoctor")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public void addDoctor(String docInString) {
         DBConnection dbc = new DBConnection();
+        Gson serializer = new Gson();
+        Doctor doctor = serializer.fromJson(docInString, Doctor.class);
         try { 
             String sql = "INSERT INTO doctor (first_name, last_name, login, password, birth_date, address) " + 
                 "VALUES (?, ?, ?, ?, ?, ?)";
@@ -127,8 +134,7 @@ public class DoctorControllerImpl implements DoctorController {
         } catch (Exception e) { 
             System.err.println("Got an exception! "); 
             System.err.println(e.getMessage()); 
-        } 
-  
+        }
     }
 
     @Override
