@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>12</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>924</x>
+      <y>408</y>
+      <w>300</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>PatientController
+--
+--
+createDoctor(Doctor doctor)
+readAllDoctors() : List&lt;Doctor&gt;
+readDoctorByID(int id) : Doctor
+updateDoctor(Doctor doctor)
+deleteDoctor(Doctor doctor)
+readHistory() : List&lt;History&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>564</x>
+      <y>408</y>
+      <w>300</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>DoctorContoller
+--
+--
+createDoctor(Doctor doctor)
+readAllDoctors(): List&lt;Doctor&gt;
+readDoctorByID(int id)
+updateDoctor(Doctor doctor)
+deleteDoctor(Doctor doctor)
+readHistory():List&lt;History&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1248</x>
+      <y>408</y>
+      <w>372</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>IllnessController
+--
+--
+createIllness(Illness illness)
+readAllIllnesses() : List&lt;Illness&gt;
+readIllnessByID(int id) : Illness
+updateIllness(Illness illness)
+deleteIllness(Illness illness)
+readHistory() : List&lt;History&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1320</x>
+      <y>660</y>
+      <w>336</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>SymptomController
+--
+--
+createSymptom(Symptom symptom)
+readAllSymptoms() : List&lt;Symptom&gt;
+readSymptomByID(int id):Symptom
+updateSymptom(Symptom symptom)
+deleteSymptom(Symptom symptom)
+readHistory():List&lt;History&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>768</y>
+      <w>372</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>TreatmentController
+--
+--
+createTreatement(Treatement treat)
+readAllTreatements() : List&lt;Treatement&gt;
+readTreatementByID(int id):Treatement
+updateTreatement(Treatement treat)
+deleteTreatement(Treatement treat)
+readHistory():List&lt;History&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>672</y>
+      <w>312</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>HistoryController
+--
+--
+createHistory(History his)
+readAllHistories():List&lt;History&gt;
+readHistoryByID(int id):History
+updateHistory(History his)
+deleteHistory(History his)
+readDoctor():List&lt;Doctor&gt;
+readPatient():Patient
+readIllness():List&lt;Illness&gt;
+readSymptom():List&lt;Symptom&gt;
+readTreatment():List&lt;Treatment&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1560</x>
+      <y>564</y>
+      <w>60</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>564</y>
+      <w>252</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n
+m2=1..m</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;190.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1020</x>
+      <y>564</y>
+      <w>72</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1..m</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1212</x>
+      <y>564</y>
+      <w>108</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n
+m2=1..m</panel_attributes>
+    <additional_attributes>50.0;10.0;50.0;160.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>816</y>
+      <w>156</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n
+m2=1..m</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1212</x>
+      <y>828</y>
+      <w>276</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n
+m2=1..m</panel_attributes>
+    <additional_attributes>190.0;10.0;190.0;40.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1392</x>
+      <y>936</y>
+      <w>192</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>These read opetions
+help to read relations
+to other tables
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1044</x>
+      <y>900</y>
+      <w>372</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;290.0;60.0</additional_attributes>
+  </element>
+</diagram>
