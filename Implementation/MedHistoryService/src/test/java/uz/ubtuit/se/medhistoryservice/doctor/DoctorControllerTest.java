@@ -59,23 +59,21 @@ public class DoctorControllerTest {
     public void testGetDoctorById() {
         System.out.println("getAllDoctors");
         DoctorControllerImpl instance = new DoctorControllerImpl();
-        
-        
         // TODO review the generated test code and remove the default call to fail.
     }
     @Test
     public void testAddDoctor() throws UnirestException {
         Doctor d = new Doctor();
-        d.setFirstName("WebServiceTest");
-        d.setLastName("JSONTest");
-        d.setLogin("json");
-        d.setPassword("123");
-        d.setBirthDate(Date.valueOf("2019-08-14"));
-        d.setAddress("urganch");
+        d.setFirstName("Ruslanbek");
+        d.setLastName("Berdiev");
+        d.setLogin("eshmat");
+        d.setPassword("peshmat");
+        d.setBirthDate(Date.valueOf("1995-01-01"));
+        d.setAddress("Khonqa City");
         Gson serializer = new Gson();
         HttpResponse<String> response;
         //Unirest.setObjectMapper(new GsonObjectMapper());
-        response = Unirest.put("http://172.20.120.220:8889/api/doctor/AddDoctor").
+        response = Unirest.put("http://192.168.0.19:9998/api/doctor/AddDoctor").
                 header("accept", "application/json")
                 .header("Content-Type", "application/json")
                 .body(serializer.toJson(d))

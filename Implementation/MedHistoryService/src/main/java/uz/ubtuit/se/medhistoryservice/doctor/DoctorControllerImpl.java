@@ -27,7 +27,7 @@ import org.json.JSONObject;
 import uz.ubtuit.se.medhistoryservice.config.DBConnection;
 
 /**
- *
+ * This is a CRUD implementation for Doctor class.
  * @author dilshod
  */
 @Path("/doctor")
@@ -54,7 +54,7 @@ public class DoctorControllerImpl implements DoctorController {
                 Date date = resultSet.getDate("birth_date");
                 String address = resultSet.getString("address");
                 
-                Doctor doc = new Doctor();
+                Doctor doc = new Doctor(); // this to be continued, yet no idea what this actually does.
                 
                 doc.setFirstName(firstName);
                 doc.setLastName(lastName);
